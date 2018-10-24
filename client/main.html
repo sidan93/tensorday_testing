@@ -1,25 +1,53 @@
 <head>
-  <title>tensorday_testing</title>
+  <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <title>Tensor day</title>
 </head>
 
 <body>
-  <h1>Welcome to Meteor!</h1>
-
-  {{> hello}}
-  {{> info}}
+  {{> main}}
 </body>
 
-<template name="hello">
-  <button>Click Me</button>
-  <p>You've pressed the button {{counter}} times.</p>
+<template name="main">
+  <!--{{#if get_page}}
+    {{> auth}}
+  {{else}}
+    {{> main_page}}
+  {{/if}}-->
+    {{> main_page}}
 </template>
 
-<template name="info">
-  <h2>Learn Meteor!</h2>
-  <ul>
-    <li><a href="https://www.meteor.com/try" target="_blank">Do the Tutorial</a></li>
-    <li><a href="http://guide.meteor.com" target="_blank">Follow the Guide</a></li>
-    <li><a href="https://docs.meteor.com" target="_blank">Read the Docs</a></li>
-    <li><a href="https://forums.meteor.com" target="_blank">Discussions</a></li>
-  </ul>
+<template name="main_page">
+  <div class=main_page>
+  {{#each get_items}}
+    <div class="room">
+      <div>{{name}}</div>
+    </div>
+  {{/each }}
+  </div>  
 </template>
+<template name="auth">
+  <div class="auth">
+    <form>
+      <div class="input-group">
+        <span class="input-group-addon" id="basic-addon1">Username</span>
+        <input type="text" class="form-control" placeholder="My name" aria-describedby="basic-addon1">
+      </div>
+      <div class="input-group">
+        <span class="input-group-addon" id="basic-addon1">Password</span>
+        <input type="password" class="form-control auth_password" placeholder="My password" aria-describedby="basic-addon1">
+      </div>
+      <div class="btn-group" role="group" aria-label="...">
+        <button type="button" class="btn btn-default auth_button">Войти</button>
+      </div>
+    </form>    
+  </div>
+</template>
+<template name="card"></template>
